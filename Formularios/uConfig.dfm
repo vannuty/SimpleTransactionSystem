@@ -3,7 +3,7 @@ object frmConfig: TfrmConfig
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'Assistente de Configura'#231#227'o'
-  ClientHeight = 344
+  ClientHeight = 359
   ClientWidth = 279
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -43,7 +43,7 @@ object frmConfig: TfrmConfig
     Left = 0
     Top = 65
     Width = 281
-    Height = 128
+    Height = 144
     TabOrder = 1
     object Label2: TLabel
       Left = 8
@@ -62,17 +62,18 @@ object frmConfig: TfrmConfig
       Left = 8
       Top = 28
       Width = 253
-      Height = 65
+      Height = 78
       Caption = 
         '  Obs: Para criar o banco de dados '#233' necess'#225'rio que esse usu'#225'rio' +
         ' do windows esteja com autoriza'#231#227'o para alterar informa'#231#245'es na i' +
-        'nst'#226'ncia SQL Server. Caso n'#227'o tenha autoriza'#231#227'o, voc'#234' deve criar' +
-        ' um Database chamado '#39'bank'#39' manualmente.'
+        'nst'#226'ncia SQL Server. Caso n'#227'o tenha autoriza'#231#227'o ou caso a inst'#226'n' +
+        'cia sej'#225' em outra maquina, voc'#234' deve criar um Database chamado '#39 +
+        'bank'#39' manualmente.'
       WordWrap = True
     end
     object btnCriarDB: TButton
       Left = 104
-      Top = 99
+      Top = 112
       Width = 75
       Height = 25
       Caption = 'Criar'
@@ -82,7 +83,7 @@ object frmConfig: TfrmConfig
   end
   object Panel3: TPanel
     Left = 0
-    Top = 193
+    Top = 208
     Width = 281
     Height = 152
     TabOrder = 2

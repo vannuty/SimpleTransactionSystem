@@ -3,7 +3,7 @@ unit uFuncoes;
 interface
 
 uses
-  System.SysUtils, IniFiles, Forms, ShellApi;
+  System.SysUtils, IniFiles, Forms, ShellApi, Windows;
 
 type
   TTipoOperacao = (tpGet = 1, tpSet = 2, tpCreate = 3);
@@ -108,7 +108,7 @@ End;
 
 procedure RestartAplicacao;
 begin
-  ShellExecute(0, nil, PChar(application.exename), nil, nil, 0);
+  ShellExecute(0, nil, PChar(application.exename), nil, nil, SW_SHOWNORMAL);
   application.Terminate;
 end;
 

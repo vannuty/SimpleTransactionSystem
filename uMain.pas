@@ -10,10 +10,11 @@ uses
 
 type
   TfrmMain = class(TForm)
-    btnCadCorrentista: TButton;
-    btnCadMovimentacao: TButton;
+    btnCadCorrentista: TSpeedButton;
+    btnCadMovimentacao: TSpeedButton;
     procedure btnCadCorrentistaClick(Sender: TObject);
     procedure btnCadMovimentacaoClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -47,6 +48,11 @@ begin
   finally
     FreeAndNil(frmCadMovimentacao);
   end;
+end;
+
+procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 end.

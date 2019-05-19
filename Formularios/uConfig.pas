@@ -92,7 +92,7 @@ end;
 procedure TfrmConfig.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FreeAndNil(DbModule);
-  Self.Destroy;
+  Application.Terminate;
 end;
 
 procedure TfrmConfig.FormShow(Sender: TObject);
