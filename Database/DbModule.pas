@@ -11,6 +11,7 @@ type
     SQLConnection: TSQLConnection;
     procedure DataModuleCreate(Sender: TObject);
     procedure LoadConfig;
+    procedure CriarBanco;
     procedure CriarEstrutura;
     procedure CriarProcedure;
     procedure CriarTiggrer;
@@ -28,6 +29,13 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TDmConexao.CriarBanco;
+var CreateDBStr: string;
+begin
+  CreateDBStr := '/Q "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N''bank'') BEGIN CREATE DATABASE bank END;"';
+  executarShell('sqlcmd.exe', CreateDBStr);
+end;
 
 procedure TDmConexao.CriarEstrutura;
 var EstruturaStr: string;

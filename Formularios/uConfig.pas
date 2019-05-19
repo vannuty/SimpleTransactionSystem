@@ -26,12 +26,15 @@ type
     edtSenha: TEdit;
     edtCriarEstrutura: TButton;
     procedure btnCriarDBClick(Sender: TObject);
-    function ValidarInformacoesSQL: boolean;
     procedure edtCriarEstruturaClick(Sender: TObject);
-    procedure SalvarConfig;
-    function CriarEstrutura: boolean;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
+    DbModule: TDmConexao;
+    procedure SalvarConfig;
+    function CriarEstrutura: boolean;
+    function ValidarInformacoesSQL: boolean;
   public
     { Public declarations }
   end;
@@ -46,19 +49,16 @@ implementation
 procedure TfrmConfig.btnCriarDBClick(Sender: TObject);
 var CreateDBStr: string;
 begin
- try
-   CreateDBStr := '/Q "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N''bank'') BEGIN CREATE DATABASE bank END;"';
-   ExecutarShell('sqlcmd.exe', CreateDBStr);
- finally
-   showmessage('Banco de dados criado com sucesso!');
- end;
+  try
+    DBModule.CriarBanco;
+  finally
+    ShowMessage('Banco de dados criado com sucesso!');
+  end;
 end;
 
 function TfrmConfig.CriarEstrutura: boolean;
-var DbModule: TDmConexao;
 begin
   Result := True;
-  DbModule := TDmConexao.Create(Application);
   try
     try
        DbModule.LoadConfig;
@@ -87,6 +87,17 @@ begin
     ShowMessage('Estrutura criada com sucesso! A aplicação será reiniciada.');
     RestartAplicacao;
   end;
+end;
+
+procedure TfrmConfig.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FreeAndNil(DbModule);
+  Self.Destroy;
+end;
+
+procedure TfrmConfig.FormShow(Sender: TObject);
+begin
+  DbModule := TDmConexao.Create(Application);
 end;
 
 procedure TfrmConfig.SalvarConfig;

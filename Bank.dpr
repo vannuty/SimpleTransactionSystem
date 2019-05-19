@@ -5,7 +5,9 @@ uses
   uMain in 'uMain.pas' {frmMain},
   uFuncoes in 'Uteis\uFuncoes.pas',
   DbModule in 'Database\DbModule.pas' {DmConexao: TDataModule},
-  uConfig in 'Formularios\uConfig.pas' {frmConfig};
+  uConfig in 'Formularios\uConfig.pas' {frmConfig},
+  uCadCorrentista in 'Formularios\uCadCorrentista.pas' {frmCadCorrentista},
+  uCadMovimentacao in 'Formularios\uCadMovimentacao.pas' {frmCadMovimentacao};
 
 {$R *.res}
 

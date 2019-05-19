@@ -6,6 +6,7 @@ object DmConexao: TDmConexao
   object SQLConnection: TSQLConnection
     ConnectionName = 'Devart SQL Server'
     DriverName = 'DevartSQLServer'
+    LoginPrompt = False
     Params.Strings = (
       'BlobSize=-1'
       'HostName=DESKTOP-4PBKDBH'

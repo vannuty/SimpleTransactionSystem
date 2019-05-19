@@ -7,6 +7,7 @@ uses
 
 type
   TTipoOperacao = (tpGet = 1, tpSet = 2, tpCreate = 3);
+  TTipoAcao = (tpAdicionar = 1, tpEditar = 2, tpNone = 3);
   const CKEY1 = 46750;
         CKEY2 = 38247;
 
