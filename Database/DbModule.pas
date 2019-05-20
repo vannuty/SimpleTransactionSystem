@@ -80,7 +80,7 @@ procedure TDmConexao.CriarProcedure;
 begin
   EstruturaStr := 'CREATE  PROCEDURE [dbo].[_sp_ListarMovimentacao] ( ' +
                   '  @IDCORRENTISTA  INTEGER, ' +
-                  '  @OPR        CHAR(1), ' +
+                  '  @OPR        CHAR(1) = NULL, ' +
                   '  @DATAINI	  DATETIME, ' +
                   '  @DATAFIM	  DATETIME) ' +
                   'as ' +

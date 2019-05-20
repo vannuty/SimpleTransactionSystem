@@ -140,7 +140,6 @@ object frmConfig: TfrmConfig
       Width = 138
       Height = 21
       TabOrder = 0
-      Text = 'DESKTOP-4PBKDBH'
     end
     object edtUsuario: TEdit
       Left = 131
@@ -148,7 +147,6 @@ object frmConfig: TfrmConfig
       Width = 138
       Height = 21
       TabOrder = 1
-      Text = 'sa'
     end
     object edtSenha: TEdit
       Left = 131
@@ -157,7 +155,6 @@ object frmConfig: TfrmConfig
       Height = 21
       PasswordChar = '*'
       TabOrder = 2
-      Text = 'master'
     end
     object edtCriarEstrutura: TButton
       Left = 104
